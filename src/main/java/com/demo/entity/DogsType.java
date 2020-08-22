@@ -1,6 +1,7 @@
 package com.demo.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
@@ -21,10 +22,14 @@ public class DogsType {
     private String breedName;
 
     @Column(name = "createdAt")
-    private Date createdAt;
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm")
+    private String createdAt;
 
-    @Column(name = "updatedAt")
-    private Date updatedAt;
+     @Column(name = "updatedAt")
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm")
+    private String updatedAt;
+
+
 
     @JsonIgnore
     @OneToMany(mappedBy = "dogsType")
@@ -46,19 +51,19 @@ public class DogsType {
         this.breedName = breedName;
     }
 
-    public Date getCreatedAt() {
+    public String getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
 
-    public Date getUpdatedAt() {
+    public String getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(Date updatedAt) {
+    public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
 
@@ -67,6 +72,17 @@ public class DogsType {
     }
 
     public void setDogs(List<Dogs> dogs) {
+        this.dogs = dogs;
+    }
+
+    public DogsType() {
+    }
+
+    public DogsType(Integer breedNameId, String breedName, String createdAt, String updatedAt, List<Dogs> dogs) {
+        this.breedNameId = breedNameId;
+        this.breedName = breedName;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
         this.dogs = dogs;
     }
 }

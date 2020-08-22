@@ -9,34 +9,34 @@
 <body>
 <div layout:fragment="content">
     <div align="center">
-        <h1>Create New Dog</h1>
+        <h1>Delete Dog</h1>
         <br />
-        <form action="#" th:action="@{/update}" th:object="${dog}" method="put">
+        <form action="#" th:action="@{/admin/delete}" th:object="${dogDelete}" method="delete">
 
             <table border="0" cellpadding="10">
                 <tr>
                     <td>Name:</td>
-                    <td><input type="text" th:field="${dog.name}" /></td>
+                    <td><input type="text" th:field="${dogDelete.name}" /></td>
                 </tr>
                 <tr>
                     <td>BreedNameId:</td>
-                    <td><input type="text" th:field="${dog.breedNameId}" /></td>
+                    <td><input type="text" th:field="${dogDelete.breedNameId}" /></td>
                 </tr>
                 <tr>
                     <td>BirthDay:</td>
-                    <td><input type="text" th:field="${dog.birthday}" /></td>
+                    <td><input type="text" th:field="${dogDelete.birthday}" /></td>
                 </tr>
                 <tr>
                     <td>Gender:</td>
-                    <td><input type="text" th:field="${dog.gender}" /></td>
+                    <td><input type="text" th:field="${dogDelete.gender}" /></td>
                 </tr>
                 <tr>
                     <td>Color:</td>
-                    <td><input type="text" th:field="${dog.color}" /></td>
+                    <td><input type="text" th:field="${dogDelete.color}" /></td>
                 </tr>
                 <tr>
                     <td>Status:</td>
-                    <td><input type="text" th:field="${dog.status}" /></td>
+                    <td><input type="text" th:field="${dogDelete.status}" /></td>
                 </tr>
                 <tr>
                     <td><input type="submit" value="Submit" /></td>

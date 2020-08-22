@@ -9,37 +9,38 @@
 <body>
 <div layout:fragment="content">
     <div align="center">
-        <h1>Delete Dog</h1>
+        <h1>Create New Dog</h1>
         <br />
-        <form action="#" th:action="@{/delete}" th:object="${dog}" method="delete">
+        <form action="#" th:action="@{/admin/update}" th:object="${dogUpdate}" method="put">
 
             <table border="0" cellpadding="10">
                 <tr>
                     <td>Name:</td>
-                    <td><input type="text" th:field="${dog.name}" /></td>
+                    <td><input type="text" th:field="${dogUpdate.name}" /></td>
                 </tr>
                 <tr>
                     <td>BreedNameId:</td>
-                    <td><input type="text" th:field="${dog.breedNameId}" /></td>
+                    <td><input type="text" th:field="${dogUpdate.breedNameId}" /></td>
                 </tr>
                 <tr>
                     <td>BirthDay:</td>
-                    <td><input type="text" th:field="${dog.birthday}" /></td>
+                    <td><input type="text" th:field="${dogUpdate.birthday}" /></td>
                 </tr>
                 <tr>
                     <td>Gender:</td>
-                    <td><input type="text" th:field="${dog.gender}" /></td>
+                    <td><input type="text" th:field="${dogUpdate.gender}" /></td>
                 </tr>
                 <tr>
                     <td>Color:</td>
-                    <td><input type="text" th:field="${dog.color}" /></td>
+                    <td><input type="text" th:field="${dogUpdate.color}" /></td>
                 </tr>
                 <tr>
                     <td>Status:</td>
-                    <td><input type="text" th:field="${dog.status}" /></td>
+                    <td><input type="text" th:field="${dogUpdate.status}" /></td>
                 </tr>
                 <tr>
                     <td><input type="submit" value="Submit" /></td>
+                    <td><input type="reset" value="Reset" /></td>
                 </tr>
             </table>
         </form>

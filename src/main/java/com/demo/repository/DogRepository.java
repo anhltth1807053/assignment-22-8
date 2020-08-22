@@ -12,11 +12,10 @@ import java.util.List;
 import java.util.Optional;
 
 public interface DogRepository extends CrudRepository<Dogs, Integer>, JpaSpecificationExecutor<Dogs> {
-    List<Dogs> findAll(Specification specification);
-    Optional<Dogs> findById(Integer id);
 
-    void deleteById(Integer id);
+    @Query("select c from Dogs c where c.status = 1")
+    List<Dogs> findAllDogs();
 
-    @Query("select c from Dogs c where c.name like %?1%")
-    Page<List<Dogs>> findAllByName(String name, Pageable pageable);
+    @Query("select c from Dogs c where c.id=:id and c.status=1")
+    Dogs findDogsById(int id);
 }

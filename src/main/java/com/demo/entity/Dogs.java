@@ -3,7 +3,6 @@ package com.demo.entity;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.persistence.*;
-import java.sql.Date;
 
 @Entity
 public class Dogs {
@@ -16,7 +15,7 @@ public class Dogs {
     private Integer breedNameId;
 
     @JsonFormat(pattern="yyyy-MM-dd HH:mm")
-    private Date birthday;
+    private String birthday;
 
     private int gender;
 
@@ -31,26 +30,6 @@ public class Dogs {
     @ManyToOne() //EAGER
     @JoinColumn(name = "breedNameId", insertable = false, updatable = false)
     private DogsType dogsType;
-
-
-    public Dogs(int id, String name, Integer breedNameId, Date birthday, int gender, String color, int status, DogsType dogsType) {
-        this.id = id;
-        this.name = name;
-        this.breedNameId = breedNameId;
-        this.birthday = birthday;
-        this.gender = gender;
-        this.color = color;
-        this.status = status;
-        this.dogsType = dogsType;
-    }
-
-    public DogsType getDogsType() {
-        return dogsType;
-    }
-
-    public void setDogsType(DogsType dogsType) {
-        this.dogsType = dogsType;
-    }
 
     public int getId() {
         return id;
@@ -76,11 +55,11 @@ public class Dogs {
         this.breedNameId = breedNameId;
     }
 
-    public Date getBirthday() {
+    public String getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(Date birthday) {
+    public void setBirthday(String birthday) {
         this.birthday = birthday;
     }
 
@@ -106,5 +85,24 @@ public class Dogs {
 
     public void setStatus(int status) {
         this.status = status;
+    }
+
+    public DogsType getDogsType() {
+        return dogsType;
+    }
+
+    public void setDogsType(DogsType dogsType) {
+        this.dogsType = dogsType;
+    }
+
+    public Dogs(int id, String name, Integer breedNameId, String birthday, int gender, String color, int status, DogsType dogsType) {
+        this.id = id;
+        this.name = name;
+        this.breedNameId = breedNameId;
+        this.birthday = birthday;
+        this.gender = gender;
+        this.color = color;
+        this.status = status;
+        this.dogsType = dogsType;
     }
 }

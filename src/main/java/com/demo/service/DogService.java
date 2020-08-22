@@ -10,9 +10,10 @@ import java.util.Optional;
 public interface DogService {
 
     List<Dogs> getAll();
-    Page<List<Dogs>>findAllByName(String name, Pageable pageable);
-    Dogs saveDog(Dogs dogs);
-    Optional<Dogs> getDogById(Integer id);
 
-    void deleteById(Integer id);
+    Dogs saveDogs(Dogs dogs);
+
+    Dogs updateDogs(Dogs dogs);
+
+    Dogs getDogId(int id);
 }

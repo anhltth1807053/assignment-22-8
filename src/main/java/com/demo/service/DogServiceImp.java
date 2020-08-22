@@ -18,26 +18,24 @@ public class DogServiceImp implements DogService {
 
     @Override
     public List<Dogs> getAll() {
-        return (List<Dogs>) dogRepository.findAll();
+        return (List<Dogs>) dogRepository.findAllDogs();
     }
 
     @Override
-    public Page<List<Dogs>> findAllByName(String name, Pageable pageable) {
-        return dogRepository.findAllByName(name,pageable);
-    }
-
-    @Override
-    public Dogs saveDog(Dogs dogs) {
+    public Dogs saveDogs(Dogs dogs) {
+        dogs.setStatus(1);
         return dogRepository.save(dogs);
     }
 
     @Override
-    public Optional<Dogs> getDogById(Integer id) {
-        return dogRepository.findById(id);
+    public Dogs updateDogs(Dogs dogs) {
+        dogs.setStatus(2);
+        return dogRepository.save(dogs);
     }
 
     @Override
-    public void deleteById(Integer id) {
-        dogRepository.deleteById(id);
+    public Dogs getDogId(int id) {
+        return dogRepository.findDogsById(id);
     }
+
 }
