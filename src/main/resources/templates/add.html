@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/admin/admin}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <div align="center">
+        <h1>Create New Dog</h1>
+        <br />
+        <form action="#" th:action="@{/add-dog}" th:object="${dog}" method="post">
+
+            <table border="0" cellpadding="10">
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" th:field="${dog.name}" /></td>
+                </tr>
+                <tr>
+                    <td>BreedNameId:</td>
+                    <td><input type="text" th:field="${dog.breedNameId}" /></td>
+                </tr>
+                <tr>
+                    <td>BirthDay:</td>
+                    <td><input type="text" th:field="${dog.birthday}" /></td>
+                </tr>
+                <tr>
+                    <td>Gender:</td>
+                    <td><input type="text" th:field="${dog.gender}" /></td>
+                </tr>
+                <tr>
+                    <td>Color:</td>
+                    <td><input type="text" th:field="${dog.color}" /></td>
+                </tr>
+                <tr>
+                    <td>Status:</td>
+                    <td><input type="text" th:field="${dog.status}" /></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Submit" /></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+
+</body>
+
+</html>
+
+
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org"-->
+<!--      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"-->
+<!--      layout:decorate="~{/layout/admin}">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">-->
+<!--    &lt;!&ndash;css&ndash;&gt;-->
+<!--    <link th:href="@{/css/bootstrap.css}" rel="stylesheet" />-->
+
+<!--    &lt;!&ndash;js&ndash;&gt;-->
+<!--    <script th:src="@{/js/min.js}"></script>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1>Add</h1>-->
+<!--<form action="#" th:action="@{/addDog}" th:object="${dog}" method="post">-->
+<!--<table border="1">-->
+<!--    <tr>-->
+<!--        <td>Name:</td>-->
+<!--        <td><input type="text" th:field="${dog.name}" /></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>BreedNameId:</td>-->
+<!--        <td><input type="text" th:field="${dog.breedNameId}" /></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>BirthDay:</td>-->
+<!--        <td><input type="text" th:field="${dog.birthday}" /></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>Gender:</td>-->
+<!--        <td><input type="text" th:field="${dog.gender}" /></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>Color:</td>-->
+<!--        <td><input type="text" th:field="${dog.color}" /></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>Status:</td>-->
+<!--        <td><input type="text" th:field="${dog.status}" /></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td><input type="submit" value="Submit" /></td>-->
+<!--    </tr>-->
+<!--</table>-->
+<!--</form>-->
+<!--</body>-->
+<!--</html>-->

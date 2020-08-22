@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/admin/admin}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/css/table.css}" rel="stylesheet" />
+
+</head>
+<body>
+<div layout:fragment="content">
+    <div align="center">
+        <table id="customers">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>BreedNameId</th>
+                <th>Birthday</th>
+                <th>Gender</th>
+                <th>Color</th>
+                <th>Status</th>
+                <th></th>
+                <th></th>
+
+            </tr>
+            <tr th:each="p: ${dogs}">
+                <td th:text="${p.id}">ID</td>
+                <td th:text="${p.name}">Name</td>
+                <td th:text="${p.breedNameId}">BreedNameId</td>
+                <td th:text="${p.birthday}">Birthday</td>
+                <td th:text="${p.gender}">Gender</td>
+                <td th:text="${p.color}">Color</td>
+                <td th:text="${p.status}">Status</td>
+                <td>
+                    <a th:href="@{'/update/' + ${p.id}}">
+                        <span>Update</span>
+                    </a>
+                </td>
+                <td>
+                    <a th:href="@{'/delete/' + ${p.id}}">
+                        <span>Delete</span>
+                    </a>
+                </td>
+            </tr>
+
+        </table>
+
+    </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org"-->
+<!--      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"><head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">-->
+<!--    &lt;!&ndash;css&ndash;&gt;-->
+<!--    <link th:href="@{/css/custom.css}" rel="stylesheet" />-->
+<!--    &lt;!&ndash;js&ndash;&gt;-->
+<!--    <script th:src="@{/js/min.js}"></script>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div layout:fragment="content">-->
+
+<!--    <table>-->
+<!--        <tr>-->
+<!--            <th>ID</th>-->
+<!--            <th>Name</th>-->
+<!--            <th>BreedNameId</th>-->
+<!--            <th>Birthday</th>-->
+<!--            <th>Gender</th>-->
+<!--            <th>Color</th>-->
+<!--            <th>Status</th>-->
+<!--        </tr>-->
+<!--        <tr th:each="p: ${dogs}">-->
+<!--            <td th:text="${p.id}">ID</td>-->
+<!--            <td th:text="${p.name}">Name</td>-->
+<!--            <td th:text="${p.breedNameId}">BreedNameId</td>-->
+<!--            <td th:text="${p.birthday}">Birthday</td>-->
+<!--            <td th:text="${p.gender}">Gender</td>-->
+<!--            <td th:text="${p.color}">Color</td>-->
+<!--            <td th:text="${p.status}">Status</td>-->
+<!--            <td>-->
+<!--                <a th:href="@{'/update' + ${p.id}}">-->
+<!--                <span th:text="${p.name}"></span>-->
+<!--                </a>-->
+<!--            </td>-->
+<!--        </tr>-->
+
+<!--    </table>-->
+
+<!--</div>-->
+
+<!--</body>-->
+<!--</html>-->

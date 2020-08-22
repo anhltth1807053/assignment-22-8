@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/admin/admin}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <div align="center">
+        <h1>Delete Dog</h1>
+        <br />
+        <form action="#" th:action="@{/delete}" th:object="${dog}" method="delete">
+
+            <table border="0" cellpadding="10">
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" th:field="${dog.name}" /></td>
+                </tr>
+                <tr>
+                    <td>BreedNameId:</td>
+                    <td><input type="text" th:field="${dog.breedNameId}" /></td>
+                </tr>
+                <tr>
+                    <td>BirthDay:</td>
+                    <td><input type="text" th:field="${dog.birthday}" /></td>
+                </tr>
+                <tr>
+                    <td>Gender:</td>
+                    <td><input type="text" th:field="${dog.gender}" /></td>
+                </tr>
+                <tr>
+                    <td>Color:</td>
+                    <td><input type="text" th:field="${dog.color}" /></td>
+                </tr>
+                <tr>
+                    <td>Status:</td>
+                    <td><input type="text" th:field="${dog.status}" /></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Submit" /></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+
+</body>
+
+</html>
+
